@@ -2,17 +2,17 @@ sampleRate = 200;
 nSecBuffer = 10;
 nSecDisplay = 5;
 
-stream = OpenBCIStream('OpenBCI-RAW-testing123.txt', sampleRate, 4, nSecBuffer);
+stream = OpenBCIStream('/Applications/SavedData/OpenBCI-RAW-NewTestMatlab.txt', sampleRate, 4, nSecBuffer);
 smoother = SettleSmoother([4, sampleRate * nSecDisplay]);
 hold off
 figure(1);
 clf
 while true
-	nSteps = stream.Read_New_Data(0.08) * sampleRate;
+	nSteps = stream.Read_New_Data(.08) * sampleRate;
 	[x, y] = stream.Get_Raw_Data(-nSecDisplay, 0);
 
 	[freqX, freqY] = To_Frequencies(y, nSecDisplay);
-	y2 = Isolate_Frequency_Range(y, freqX, freqY, 18, 25);
+	y2 = Isolate_Frequency_Range(y, freqX, freqY, 5, 20);
 	smoother.Feed_Data(y2, nSteps);
 	y3 = smoother.Get_Data();
 	
