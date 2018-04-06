@@ -21,7 +21,7 @@ classdef OpenBCIStream < handle
 		
 		function timeRead = Read_New_Data(this, maxTime)
 			% setup file reading
-			fileID = fopen(this.fileName);
+			fileID = fopen(this.fileName, 'r');
 			fseek(fileID, this.charOffset, 'bof');
 			
 			% initialize file-reading variables
@@ -100,6 +100,17 @@ classdef OpenBCIStream < handle
 			
 			x = linspace(time2, time1, index2 - index1 + 1);
 			y = this.buffer(:, index1:index2);
+		end
+		
+		function Go_To_Start(this)
+			this.charOffset = 0;
+		end
+		
+		function Go_To_End(this)
+			fileID = fopen(this.fileName, 'r');
+			fseek(fileID, 0, 'eof');
+			this.charOffset = ftell(fileID);
+			fclose(fileID);
 		end
 	end
 end
