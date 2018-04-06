@@ -6,7 +6,9 @@ newFreqY = zeros(dataSize);
 
 for iRow = 1:dataSize(1)
 	for iColumn = 1:dataSize(2)
-		if freqX(iRow, iColumn) < lowFreq || freqX(iRow, iColumn) > highFreq
+		if freqX(iRow, iColumn) < lowFreq || 
+			newFreqY(iRow, iColumn) = 0;
+		elseif freqX(iRow, iColumn) > highFreq
 			newFreqY(iRow, iColumn) = 0;
 		else
 			newFreqY(iRow, iColumn) = freqY(iRow, iColumn);
