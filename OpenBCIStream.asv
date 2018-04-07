@@ -56,7 +56,6 @@ classdef OpenBCIStream < handle
 			
 			if nLines <= 0
 				fclose(fileID);
-				timeRead = 0;
 				return;
 			end
 			
