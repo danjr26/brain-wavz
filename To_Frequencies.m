@@ -4,20 +4,25 @@ function [freqX, freqY] = To_Frequencies(y, segmentLength)
 % Last edited 31 March 2018
 
 % Uses fft() to create xy-pairing of frequencies of input evenly-spaced
-% data points
+% data points. Is undone by pair function From_Frequencies(). Each of the m
+% rows of <y> is treated as a separate set
 
+% Input Variables
 % y :				m x n array of evenly-spaced samples of a function
-% segmentLength :	value representing total time spanned by samples
+% segmentLength :	value representing total time spanned by samples (sec)
 
-% freqX :	m x n array of frequency values, in Hertz
+% Output Variables
+% freqX :	m x n array of frequency values (Hz)
 % freqY :	m x n array of freqency amplitudes
 
-%% Calculate return values
+%% Initialize variables
 
 dataSize = size(y);
 
 freqX = zeros(dataSize);
 freqY = zeros(dataSize);
+
+%% Calculate output
 
 for iRow = 1:dataSize(1)
 	freqX(iRow, :) = linspace(0, dataSize(2) / segmentLength, dataSize(2));

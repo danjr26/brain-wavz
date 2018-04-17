@@ -1,9 +1,6 @@
 % Created by Daniel Riehm
 % Last edited 16 April 2018
 
-% It's a class and not a bunch of separate functions because it's more
-% elegant this way 
-
 % Continuously opens, reads, and closes file to which the OpenBCI software is
 % writing the data, live.
 
@@ -117,9 +114,8 @@ classdef OpenBCIStream < handle
 		end
 		
 		% Gets data from all channels from time1 to time2, both of which
-		% should be nonpositive (since a time of -5 means 5 seconds ago, 
-		% positive times would mean requesting data that hasn't been read
-		% yet, and while I'm good, I'm not quite that good)
+		% should be nonpositive (since -5 means 5 seconds ago, positive 
+		% times would mean reading into the future, and while )
 		function [x, y] = Get_Raw_Data(this, time1, time2)
 			% yay parameter screening because it's not necessarily
 			% intuitive
