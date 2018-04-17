@@ -36,9 +36,7 @@ stream = OpenBCIStream('OpenBCI-RAW-testing123.txt', sampleRate, 4, nSecBuffer);
 % smooths graph by averaging over time
 smoother = SettleSmoother([4, sampleRate * nSecDisplay]);
 
-% just in case
-figure(1);
-clf
+
 
 %% Processing loop
 

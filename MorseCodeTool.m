@@ -22,7 +22,7 @@ function varargout = MorseCodeTool(varargin)
 
 % Edit the above text to modify the response to help MorseCodeTool
 
-% Last Modified by GUIDE v2.5 17-Apr-2018 16:25:38
+% Last Modified by GUIDE v2.5 17-Apr-2018 16:37:33
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -81,4 +81,3 @@ function StartButton_Callback(hObject, eventdata, handles)
 
 
 StreamTestCopy(handles);
-
