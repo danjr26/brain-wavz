@@ -57,11 +57,11 @@ while true
 	y3 = smoother.Get_Data();
 	
 	% plot
-	subplot(2, 1, 1);
+	
 	plot(handles.BrainAxesTop,x, y3(1, :));
 	axis([-nSecDisplay, 0, -maxAmplitude, maxAmplitude]);
 	
-	subplot(2, 1, 2);
+	
 	plot(handles.BrainAxesBottom,x, y3(2, :));
 	axis([-nSecDisplay, 0, -maxAmplitude, maxAmplitude]);
 	
