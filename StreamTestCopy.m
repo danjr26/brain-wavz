@@ -39,7 +39,6 @@ smoother = SettleSmoother([4, sampleRate * nSecDisplay]);
 % just in case
 figure(1);
 clf
-
 %% Processing loop
 
 % To stop it you have to Ctrl-C; Sorry! -- no GUI yet
