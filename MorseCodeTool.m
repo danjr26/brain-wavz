@@ -22,7 +22,7 @@ function varargout = MorseCodeTool(varargin)
 
 % Edit the above text to modify the response to help MorseCodeTool
 
-% Last Modified by GUIDE v2.5 17-Apr-2018 16:37:33
+% Last Modified by GUIDE v2.5 21-Apr-2018 22:03:36
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -61,6 +61,7 @@ guidata(hObject, handles);
 % UIWAIT makes MorseCodeTool wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
+SetupStreamPlot(handles);
 
 % --- Outputs from this function are returned to the command line.
 function varargout = MorseCodeTool_OutputFcn(hObject, eventdata, handles) 
@@ -70,7 +71,7 @@ function varargout = MorseCodeTool_OutputFcn(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Get default command line output from handles structure
-varargout{1} = handles.output;
+	varargout{1} = handles.output;
 
 
 % --- Executes on button press in StartButton.
@@ -79,5 +80,13 @@ function StartButton_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+start(handles.figure1.UserData.updater);
 
-StreamTestCopy(handles);
+
+% --- Executes on button press in StopButton.
+function StopButton_Callback(hObject, eventdata, handles)
+% hObject    handle to StopButton (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+stop(handles.figure1.UserData.updater);
