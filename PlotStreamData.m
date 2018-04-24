@@ -23,7 +23,7 @@ maxAmplitude = 100;
 %% Processing loop
 
 % read
-timeRead = d.stream.Read_New_Data(maxRead) * d.sampleRate;
+timeRead = d.stream.Read_New_Data(maxRead);
 [x, y] = d.stream.Get_Raw_Data(-d.nSecDisplay, 0);
 
 % process

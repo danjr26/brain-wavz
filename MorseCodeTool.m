@@ -82,7 +82,7 @@ function StartButton_Callback(hObject, eventdata, handles)
 
 start(handles.figure1.UserData.updater);
 
-
+	
 % --- Executes on button press in StopButton.
 function StopButton_Callback(hObject, eventdata, handles)
 % hObject    handle to StopButton (see GCBO)
