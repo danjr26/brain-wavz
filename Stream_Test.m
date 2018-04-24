@@ -17,7 +17,7 @@ nSecDisplay = 5;
 
 % live: set to a very high number
 % non-live: adjust to adjust speed - exact value depends on computer
-maxRead = 0.08;
+maxRead = 0.15;
 
 % range of frequencies to isolate
 lowFreq = 7;

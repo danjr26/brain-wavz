@@ -15,11 +15,12 @@ d = handles.figure1.UserData;
 
 % create streaming object (initialized for reading pre-recorded data)
 handles.figure1.UserData.stream = ...
-	OpenBCIStream('OpenBCI-RAW-testing123.txt', d.sampleRate, 4, d.nSecBuffer);
-	%OpenBCIStream('/Applications/SavedData/OpenBCI-RAW-FirstStreamTest.txt', d.sampleRate, 4, d.nSecBuffer);
+    OpenBCIStream('/Applications/SavedData/OpenBCI-RAW-FirstStreamTest.txt', d.sampleRate, 4, d.nSecBuffer);
+	%OpenBCIStream('OpenBCI-RAW-testing123.txt', d.sampleRate, 4, d.nSecBuffer);
+	
 
 % uncomment this to initialize for live streaming
-% stream.Go_To_End();
+handles.figure1.UserData.stream.Go_To_End();
 
 % smooths graph by averaging over time
 handles.figure1.UserData.smoother = ... 
