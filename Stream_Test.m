@@ -38,6 +38,7 @@ smoother = SettleSmoother([4, sampleRate * nSecDisplay]);
 % just in case
 figure(1);
 clf
+code = '0000000';
 
 %% Processing loop
 
@@ -55,6 +56,10 @@ while true
 	smoother.Feed_Data(y2, timeRead);
 	y3 = smoother.Get_Data();
 	
+    num = timeRead*200;
+    code = [code, InterpretDataCopy(num, y3)];
+    
+    
 	% plot
 	subplot(4, 1, 1);
 	plot(x, y3(1, :));
