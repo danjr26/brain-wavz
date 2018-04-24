@@ -14,6 +14,7 @@ position=0;
 zeroCount=0;
 
 sentence=0;
+word=0;
 
 for id=1:n
     
@@ -31,12 +32,21 @@ for id=1:n
         sentence=sentence+1;
     end
     
+%     if zeroCount==3
+%         word=word+1;
+%     end
+    
 end
 
 if sentence ~= 0
     trans=sentenceTransF(phrase);
 else
-    trans=wordTransF(phrase);
+    
+    if word ~= 0
+        trans=wordTransF(phrase);
+    else
+        trans=letterTransF(phrase);
+    end
 end
 
 
