@@ -58,7 +58,7 @@ while true
     
 	placeholder = num;
     num = timeRead*200;
-    checkCode = num - placeholder;
+    checkCode = num - placeholer;
     if checkCode > 999
     code = [code, InterpretDataCopy(num, y3)];
     end
