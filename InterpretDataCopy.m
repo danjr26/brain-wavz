@@ -3,21 +3,24 @@ function [code] = InterpretData(num, data)
 % Robbie Schaefer
 % Brain WAVS project
 
+% left wink = dot
+% right wink = dash
+% DOUBLE wink = new letter
+% a tercet of DOUBLE winks = new word
+
 %% Set Parameters
 
-threshold = 75;      % threshold value for when the computer reads a 'tick'
+threshold = 35;      % threshold value for when the computer reads a 'tick'
 dot = false;        % This will require tons of calibration
 dash = false;       % Future plans: Make it more specific for each channel
 space = false;
 
 %% Find out how much of the data is new
-if num > 4
 [~, N ] = size(data);
-num = num-3;
 
 %% Interpret the data
-
-usable =  N-3;
+num = N - num;
+usable =  N;
 code = '';
 counter = 0;
 
@@ -30,9 +33,7 @@ for i = num:usable
                     counter = counter + 1;
                 end
             end
-            if counter >= 31
                 space = true;
-            end
         else
             g = i+1;
             if data(1, g) > threshold
@@ -54,19 +55,21 @@ for i = num:usable
             end
         end
     end
+    
     if dot == true
         code = [code, '10'];
-        i = i + 20;
+        i = i + 190;
     elseif dash == true
         code = [code, '1110'];
-        i = i + 20;
+        i = i + 190;
     elseif space == true
-        code = [code, '000'];
-        i = i + 53;
+        code = [code, '00'];
+        i = i + 190;
     end
+    
     counter = 0;
     space = false;
     dash = false;
     dot = false;
-end
+    
 end

@@ -36,12 +36,12 @@ y3 = d.smoother.Get_Data();
 
 handles.figure1.UserData.totalSamples = d.totalSamples + timeRead;
 
-if d.totalSamples >= 1000
+placeholder = timeRead;
+checkCode = timeRead - placeholder;
+if totalSamples > 999
     handles.figure1.UserData.code = [d.code, InterpretDataCopy(timeRead, y3)];
-    handles.figure1.UserData.totalSamples = d.totalSamples - 1000;
-    disp(d.code);
+    totalSamples = totalSamp
 end
-
 
 
 
