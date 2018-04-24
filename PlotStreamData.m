@@ -1,4 +1,4 @@
-function PlotStreamData(~, ~, handles)
+function PlotStreamData(handles)
 % Created by Daniel Riehm
 % Last edited 16 April 2018
 
