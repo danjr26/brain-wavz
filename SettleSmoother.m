@@ -38,7 +38,7 @@ classdef SettleSmoother < handle
 		% new data points
 		function Feed_Data(this, data, nSteps)
 			keepLength = this.bufferSize(2) - nSteps;
-			
+            
 			% shift buffer
 			this.buffer = [data(:, 1:nSteps), ...
 				this.buffer(:, 1:keepLength)];

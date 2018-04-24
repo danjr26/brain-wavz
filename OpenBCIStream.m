@@ -113,7 +113,7 @@ classdef OpenBCIStream < handle
 					[newData, this.buffer(:, 1:(this.bufferSize(2) - nLines))];
 			end
 			
-			timeRead = nLines / this.sampleRate;
+			timeRead = nLines;
 		end
 		
 		% Gets data from all channels from time1 to time2, both of which

@@ -34,8 +34,8 @@ y2 = Isolate_Frequency_Range(y, freqX, freqY, lowFreq, highFreq);
 d.smoother.Feed_Data(y2, timeRead);
 y3 = d.smoother.Get_Data();
 
-num = timeRead*200;
-InterpretDataCopy(num, y3);
+num = timeRead;
+%InterpretDataCopy(num, y3);
 
 
 % plot

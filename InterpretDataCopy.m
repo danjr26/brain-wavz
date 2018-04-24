@@ -17,7 +17,7 @@ num = num-33;
 %% Interpret the data
 
 usable =  N-33;
-code = '0';
+code = '';
 counter = 0;
 
 for i = num:usable
