@@ -24,15 +24,15 @@ usable =  N-100;
 code = '';
 
 for i = num:usable
-    if data(1,i) > threshold
-        if data (2,i) > (threshold-10)
+    if data(1,i) > (threshold-10)
+        if data (2,i) > (threshold)
             space = true;
         else
             
             dot = true;
             
         end
-    elseif data(2,i) > (threshold-10)
+    elseif data(2,i) > (threshold)
         
         dash = true;
         
