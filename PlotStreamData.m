@@ -42,9 +42,6 @@ if d.totalSamples >= 1000
     handles.mText.String = morseTransF(d.code);
 end
 
-
-
-
 % plot
 
 plot(handles.BrainAxesTop, x, y3(1, :));

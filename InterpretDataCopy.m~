@@ -4,6 +4,9 @@ function [code] = InterpretData(num, data)
 % Brain WAVS project
 
 % left wink = dot
+% right wink = dash
+% DOUBLE wink = new letter
+% a tercet of DOUBLE winks = new word
 
 %% Set Parameters
 
@@ -24,21 +27,11 @@ counter = 0;
 for i = num:usable
     if data(1,i) > threshold
         if data (2,i) > threshold
-            for k = 1:3
-                l = k + i;
-                if data(1, l) > threshold && data(2,l) > threshold
-                    counter = counter + 1;
-                end
-            end
                 space = true;
         else
-            g = i+1;
-            if data(1, g) > threshold
-                if data(2, g) > threshold
-                else
+          
                     dot = true;
-                end
-            end
+
         end
     elseif data(2,i) > threshold
         if data (1,i) > threshold
