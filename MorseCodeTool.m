@@ -22,7 +22,7 @@ function varargout = MorseCodeTool(varargin)
 
 % Edit the above text to modify the response to help MorseCodeTool
 
-% Last Modified by GUIDE v2.5 21-Apr-2018 22:03:36
+% Last Modified by GUIDE v2.5 24-Apr-2018 22:34:10
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -90,3 +90,21 @@ function StopButton_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 stop(handles.figure1.UserData.updater);
+
+
+% --- Executes on button press in resetButton.
+function resetButton_Callback(hObject, eventdata, handles)
+% hObject    handle to resetButton (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+handles.mText.String = ' ';
+handles.figure1.UserData.code = ' ';
+
+
+
+
+
+
+
+
+
