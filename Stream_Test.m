@@ -45,7 +45,7 @@ code = '0000000';
 % To stop it you have to Ctrl-C; Sorry! -- no GUI yet
 while true
 	% read
-	timeRead = stream.Read_New_Data(maxRead) * sampleRate;
+	timeRead = stream.Read_New_Data(maxRead);
 	[x, y] = stream.Get_Raw_Data(-nSecDisplay, 0);
 
 	% process
@@ -55,9 +55,13 @@ while true
 	% smooth
 	smoother.Feed_Data(y2, timeRead);
 	y3 = smoother.Get_Data();
-	
+    
+	placeholder = num;
     num = timeRead*200;
+    checkCode = num - placeholder;
+    if checkCode > 999
     code = [code, InterpretDataCopy(num, y3)];
+    end
     
     
 	% plot

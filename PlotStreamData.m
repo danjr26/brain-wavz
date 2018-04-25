@@ -34,9 +34,13 @@ y2 = Isolate_Frequency_Range(y, freqX, freqY, lowFreq, highFreq);
 d.smoother.Feed_Data(y2, timeRead);
 y3 = d.smoother.Get_Data();
 
-num = timeRead;
-%InterpretDataCopy(num, y3);
+handles.figure1.UserData.totalSamples = d.totalSamples + timeRead;
 
+if d.totalSamples >= 1000
+    handles.figure1.UserData.code = [d.code, InterpretDataCopy(timeRead, y3)];
+    handles.figure1.UserData.totalSamples = d.totalSamples - 1000;
+    handles.mText.String = morseTransF(d.code);
+end
 
 % plot
 
