@@ -89,7 +89,19 @@ classdef OpenBCIStream < handle
 			for iLine = 1:nLines
 				line = fgetl(fileID);
 				
+
 				% ignores first value, which is conveniently useless
+
+				% sanity check
+				if length(line) < 2
+					for iChannel = 1:this.bufferSize(1)
+						newData(iChannel, iLine) = 0.0;
+					end
+					continue;
+				end
+				
+				% ignores first value, which is converniently useless
+
 				startIndices = strfind(line, ',') + 2;
 				endIndices = [startIndices(2:end) - 3, length(line)];
                 
