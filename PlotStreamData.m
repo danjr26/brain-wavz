@@ -11,7 +11,7 @@ d = handles.figure1.UserData;
 
 % live: set to a very high number
 % non-live: adjust to adjust speed - exact value depends on computer
-maxRead = 0.05;
+maxRead = 0.16;
 
 % range of frequencies to isolate
 lowFreq = 7;
@@ -40,6 +40,8 @@ if d.totalSamples >= 1000
     handles.figure1.UserData.code = [d.code, InterpretDataCopy(timeRead, y3)];
     handles.figure1.UserData.totalSamples = d.totalSamples - 1000;
     handles.mText.String = morseTransF(d.code);
+    disp('cycle');
+    disp(d.code);
 end
 
 % plot

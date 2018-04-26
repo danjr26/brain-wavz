@@ -20,7 +20,7 @@ handles.figure1.UserData.stream = ...
 	
 
 % uncomment this to initialize for live streaming
-%handles.figure1.UserData.stream.Go_To_End();
+handles.figure1.UserData.stream.Go_To_End();
 
 % smooths graph by averaging over time
 handles.figure1.UserData.smoother = ... 

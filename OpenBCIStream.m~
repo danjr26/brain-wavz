@@ -72,16 +72,16 @@ classdef OpenBCIStream < handle
 			% skip lines too far back to be read into the buffer
 			for iLine = this.bufferSize(2):nLines-1
 				fgetl(fileID);
-				%nLines = nLines - 1;
+				nLines = nLines - 1;
 			end
 			
 			% pre-allocate array
 			newData = zeros(this.bufferSize(1), nLines);
 			
 			if nLines <= 0
-                this.charOffset = ftell(fileID);
 				fclose(fileID);
 				timeRead = 0;
+                this.charOffset = 
 				return;
 			end
 			
@@ -162,8 +162,8 @@ classdef OpenBCIStream < handle
 			fseek(fileID, this.charOffset, 'bof');
 			line = '';
 			while ~(length(line) == 1 && line(1) == -1)
-                this.charOffset = ftell(fileID);
 				line = fgetl(fileID);
+				this.charOffset = ftell(fileID);
 			end
 			fclose(fileID);
 		end

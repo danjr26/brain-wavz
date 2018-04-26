@@ -36,14 +36,12 @@ y3 = d.smoother.Get_Data();
 
 handles.figure1.UserData.totalSamples = d.totalSamples + timeRead;
 
-placeholder = timeRead;
-checkCode = timeRead - placeholder;
-if totalSamples > 999
+if d.totalSamples >= 1000
     handles.figure1.UserData.code = [d.code, InterpretDataCopy(timeRead, y3)];
-    totalSamples = totalSamp
+    handles.figure1.UserData.totalSamples = d.totalSamples - 1000;
+    handles.mText.String = morseTransF(d.code);
+    disp(d.code);
 end
-
-
 
 % plot
 

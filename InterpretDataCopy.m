@@ -10,7 +10,7 @@ function [code] = InterpretData(num, data)
 
 %% Set Parameters
 
-threshold = 70;      % threshold value for when the computer reads a 'tick'
+threshold = 20;      % threshold value for when the computer reads a 'tick'
 dot = false;        % This will require tons of calibration
 dash = false;       % Future plans: Make it more specific for each channel
 space = false;
@@ -24,15 +24,22 @@ usable =  N-100;
 code = '';
 
 for i = num:usable
-    if data(1,i) > (threshold-10)
-        if data (2,i) > (threshold)
+    low = max(1, i - 15);
+    high = min(N, i + 15);
+    total1 = sum(abs(data(1,low:high)));
+    average1 = total1/(high - low);
+    total2 = sum(abs(data(2,low:high)));
+    average2 = total2/(high - low);
+    
+    if average1 > (threshold)
+        if average2 > (threshold)
             space = true;
         else
             
             dot = true;
             
         end
-    elseif data(2,i) > (threshold)
+    elseif average2 > (threshold)
         
         dash = true;
         
