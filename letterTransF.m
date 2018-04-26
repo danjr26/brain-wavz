@@ -117,6 +117,10 @@ elseif strcmp(string, '111011101010') == true
     % Nonsense
 elseif strcmp(string, '0') == true
     letter=('');
+elseif strcmp(string,'') == true
+    letter=('');
+elseif strcmp(string,'000') == true
+    letter=('');
 else
     letter='_';
 end
