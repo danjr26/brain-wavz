@@ -32,9 +32,9 @@ for id=1:n
         sentence=sentence+1;
     end
     
-%     if zeroCount==3
-%         word=word+1;
-%     end
+    if zeroCount==3
+        word=word+1;
+    end
     
 end
 
