@@ -15,7 +15,7 @@ zeroCount=0;
 
 sentence=0;
 word=0;
-%fiveZeros=false;
+fiveZeros=false;
 
 for id=1:n
     
@@ -37,9 +37,9 @@ for id=1:n
         word=word+1;
     end
     
-%     if zeroCount==5
-%         fiveZeros=true;
-%     end
+    if zeroCount==5
+        fiveZeros=true;
+    end
     
 end
 
@@ -47,7 +47,7 @@ if sentence ~= 0
     trans=sentenceTransF(phrase);
 else
     
-    if word ~= 0 %&& fiveZeros
+    if word ~= 0 && fiveZeros
         trans=wordTransF(phrase);
     else
         trans=letterTransF(phrase);

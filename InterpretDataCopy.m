@@ -10,7 +10,7 @@ function [code, markers] = InterpretDataCopy(num, data, handles)
 
 %% Set Parameters
 
-threshold = 5.7;      % threshold value for when the computer reads a 'tick'
+threshold = 8.7;      % threshold value for when the computer reads a 'tick'
 dot = false;        % This will require tons of calibration
 dash = false;       % Future plans: Make it more specific for each channel
 space = false;
@@ -35,14 +35,32 @@ while i <= N
     average2 = total2/(high - low);
     
     if average1 > (threshold)
-        if average2 > (threshold)
-            space = true;
+        if average1 > (threshold + 2.5)
+            if average2 > (threshold+2.5)
+                space = true;
+                
+            else
+                
+                dot = true;
+                
+            end
         else
-            
             dot = true;
-            
         end
     elseif average2 > (threshold)
+        if average2 > (threshold + 2.5)
+            
+            if average1 > (threshold + 2.5)
+                space = true;
+            else
+                dash = true;
+            end
+            
+        else
+            dash = true;
+            
+            
+        end
         
         dash = true;
         
@@ -69,8 +87,23 @@ while i <= N
 		handles.figure1.UserData.markers.types = [handles.figure1.UserData.markers.types, 0];
         i = i + 190;
         disp('space');
+        if dot == true
+            code = [code, '10'];
+            DotOrDash = '.';
+            i = i + 350;
+            disp('dot');
+        elseif dash == true
+            code = [code, '1110'];
+            DotOrDash = '-';
+            i = i + 350;
+            disp('dash');
+        elseif space == true
+            code = [code, '00'];
+            DotOrDash = '_';
+            i = i + 350;
+            disp('space');
+        end
     end
-    
     space = false;
     dash = false;
     dot = false;
