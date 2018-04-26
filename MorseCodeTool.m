@@ -22,7 +22,7 @@ function varargout = MorseCodeTool(varargin)
 
 % Edit the above text to modify the response to help MorseCodeTool
 
-% Last Modified by GUIDE v2.5 24-Apr-2018 22:34:10
+% Last Modified by GUIDE v2.5 26-Apr-2018 00:07:20
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -98,13 +98,4 @@ function resetButton_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 handles.mText.String = 'New Message';
-handles.figure1.UserData.code = '_';
-
-
-
-
-
-
-
-
-
+handles.figure1.UserData.code = '';
