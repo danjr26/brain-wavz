@@ -17,6 +17,12 @@ sentence=0;
 word=0;
 %fiveZeros=false;
 
+if strcmp(phrase(end-6:end),'0000000') == true
+    phrase=phrase(1:end-1);
+end
+
+n=length(phrase);
+
 for id=1:n
     
     position=position+1;

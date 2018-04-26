@@ -22,7 +22,7 @@ function varargout = MorseCodeTool(varargin)
 
 % Edit the above text to modify the response to help MorseCodeTool
 
-% Last Modified by GUIDE v2.5 24-Apr-2018 22:34:10
+% Last Modified by GUIDE v2.5 26-Apr-2018 00:07:20
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -99,6 +99,7 @@ function resetButton_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 handles.mText.String = 'New Message';
 handles.figure1.UserData.code = '';
+<<<<<<< HEAD
 
 
 
@@ -108,3 +109,5 @@ handles.figure1.UserData.code = '';
 
 
 
+=======
+>>>>>>> 76be214f6d088400a5aa48987a3c8b79c988ee37
