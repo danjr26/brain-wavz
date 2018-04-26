@@ -46,9 +46,10 @@ else
     % Gather structure of letters
     
     % first letter
-    
-    letter(1).string=string(1:letterspace(1)-1);
-    
+    try
+        letter(1).string=string(1:letterspace(1)-1);
+    catch e
+    end
     % middle letters
     
     letterBack=0;

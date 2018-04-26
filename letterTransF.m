@@ -58,5 +58,5 @@ elseif strcmp(string, '11101110111') == true
 elseif strcmp(string, '11101110101') == true
     letter=('Z');
 else
-    letter='';
+    letter='NONSENSE';
 end
