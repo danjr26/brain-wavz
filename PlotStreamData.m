@@ -38,15 +38,12 @@ handles.figure1.UserData.totalSamples = handles.figure1.UserData.totalSamples + 
 
 if d.totalSamples >= 1000
     handles.figure1.UserData.code = [d.code, InterpretDataCopy(timeRead, y3, handles)];
-<<<<<<< HEAD
     handles.figure1.UserData.totalSamples = d.totalSamples - 1000;
     handles.mText.String = morseTransF(d.code);
-=======
     handles.figure1.UserData.totalSamples =  handles.figure1.UserData.totalSamples - 1000;
     handles.figure1.UserData.code = [handles.figure1.UserData.code, InterpretDataCopy(timeRead, y3)];
     handles.figure1.UserData.totalSamples = handles.figure1.UserData.totalSamples - 1000;
     handles.mText.String = morseTransF(handles.figure1.UserData.code);
->>>>>>> 0a4eac830e206f5dd98d862a9f4abd17b842e798
     disp('cycle');
     disp(handles.figure1.UserData.code);
 end
