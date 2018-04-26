@@ -22,6 +22,7 @@ space = false;
 num = N - num-100;
 usable =  N-100;
 code = '';
+Dotstring = '';
 
 for i = num:usable
     low = max(1, i - 15);
@@ -47,14 +48,17 @@ for i = num:usable
     
     if dot == true
         code = [code, '10'];
+        DotOrDash = '.';
         i = i + 190;
         disp('dot');
     elseif dash == true
         code = [code, '1110'];
+        DotOrDash = '-';
         i = i + 190;
         disp('dash');
     elseif space == true
         code = [code, '00'];
+        DotOrDash = '_';
         i = i + 190;
         disp('space');
     end
@@ -62,5 +66,9 @@ for i = num:usable
     space = false;
     dash = false;
     dot = false;
+    
+    Dotstring = strcat(Dotstring,DotOrDash);
+    handles.dotText.String = Dotstring;
+    
     
 end
