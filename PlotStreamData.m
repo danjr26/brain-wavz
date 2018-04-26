@@ -23,35 +23,35 @@ maxAmplitude = 100;
 %% Processing loop
 
 % read
-timeRead = d.stream.Read_New_Data(maxRead);
-[x, y] = d.stream.Get_Raw_Data(-d.nSecDisplay, 0);
+timeRead = handles.figure1.UserData.stream.Read_New_Data(maxRead);
+[x, y] = handles.figure1.UserData.stream.Get_Raw_Data(-handles.figure1.UserData.nSecDisplay, 0);
 
 % process
-[freqX, freqY] = To_Frequencies(y, d.nSecDisplay);
+[freqX, freqY] = To_Frequencies(y, handles.figure1.UserData.nSecDisplay);
 y2 = Isolate_Frequency_Range(y, freqX, freqY, lowFreq, highFreq);
 
 % smooth
-d.smoother.Feed_Data(y2, timeRead);
-y3 = d.smoother.Get_Data();
+handles.figure1.UserData.smoother.Feed_Data(y2, timeRead);
+y3 = handles.figure1.UserData.smoother.Get_Data();
 
-handles.figure1.UserData.totalSamples = d.totalSamples + timeRead;
+handles.figure1.UserData.totalSamples = handles.figure1.UserData.totalSamples + timeRead;
 
 if d.totalSamples >= 1000
-    handles.figure1.UserData.code = [d.code, InterpretDataCopy(timeRead, y3)];
-    handles.figure1.UserData.totalSamples = d.totalSamples - 1000;
-    handles.mText.String = morseTransF(d.code);
+    handles.figure1.UserData.code = [handles.figure1.UserData.code, InterpretDataCopy(timeRead, y3)];
+    handles.figure1.UserData.totalSamples = handles.figure1.UserData.totalSamples - 1000;
+    handles.mText.String = morseTransF(handles.figure1.UserData.code);
     disp('cycle');
-    disp(d.code);
+    disp(handles.figure1.UserData.code);
 end
 
 % plot
 
 plot(handles.BrainAxesTop, x, y3(1, :));
-axis(handles.BrainAxesTop, [-d.nSecDisplay, 0, -maxAmplitude, maxAmplitude]);
+axis(handles.BrainAxesTop, [-handles.figure1.UserData.nSecDisplay, 0, -maxAmplitude, maxAmplitude]);
 
 
 plot(handles.BrainAxesBottom, x, y3(2, :));
-axis(handles.BrainAxesBottom, [-d.nSecDisplay, 0, -maxAmplitude, maxAmplitude]);
+axis(handles.BrainAxesBottom, [-handles.figure1.UserData.nSecDisplay, 0, -maxAmplitude, maxAmplitude]);
 
 drawnow;
 
