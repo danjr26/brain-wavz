@@ -57,6 +57,8 @@ elseif strcmp(string, '11101110111') == true
     letter=('Y');
 elseif strcmp(string, '11101110101') == true
     letter=('Z');
+elseif strcmp(string, '0') == true
+    letter=('');
 else
-    letter='';
+    letter='_';
 end
