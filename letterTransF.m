@@ -122,9 +122,5 @@ elseif strcmp(string,'') == true
 elseif strcmp(string,'000') == true
     letter=('');
 else
-<<<<<<< HEAD
-    letter='_';
-=======
     letter='';
->>>>>>> 0a4eac830e206f5dd98d862a9f4abd17b842e798
 end
