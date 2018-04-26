@@ -122,5 +122,5 @@ elseif strcmp(string,'') == true
 elseif strcmp(string,'000') == true
     letter=('');
 else
-    letter='_';
+    letter='';
 end
