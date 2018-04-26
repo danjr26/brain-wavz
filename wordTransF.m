@@ -34,7 +34,12 @@ else
             zeroCount=0;
         end
         
-        if zeroCount==3
+        if zeroCount==5
+            space=space+1;
+            letterspace(space)=id-4;
+            space=space+1;
+            letterspace(space)=id;
+        elseif zeroCount==3
             space=space+1;
             letterspace(space)=id-2;
             space=space+1;
@@ -46,10 +51,9 @@ else
     % Gather structure of letters
     
     % first letter
-    try
-        letter(1).string=string(1:letterspace(1)-1);
-    catch e
-    end
+    
+    letter(1).string=string(1:letterspace(1)-1);
+    
     % middle letters
     
     letterBack=0;
