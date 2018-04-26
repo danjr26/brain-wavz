@@ -10,7 +10,7 @@ function [code] = InterpretData(num, data)
 
 %% Set Parameters
 
-threshold = 6.1;      % threshold value for when the computer reads a 'tick'
+threshold = 5.7;      % threshold value for when the computer reads a 'tick'
 dot = false;        % This will require tons of calibration
 dash = false;       % Future plans: Make it more specific for each channel
 space = false;
@@ -19,8 +19,8 @@ space = false;
 [~, N ] = size(data);
 
 %% Interpret the data
-num = N - num-100;
-usable =  N-100;
+num = N - num;
+usable =  N;
 code = '';
 
 for i = num:usable
