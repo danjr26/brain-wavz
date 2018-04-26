@@ -90,17 +90,17 @@ while i <= N
         disp('space');
         if dot == true
             code = [code, '10'];
-            DotOrDash = '.';
+            %DotOrDash = '.';
             i = i + 350;
             disp('dot');
         elseif dash == true
             code = [code, '1110'];
-            DotOrDash = '-';
+            %DotOrDash = '-';
             i = i + 350;
             disp('dash');
         elseif space == true
             code = [code, '00'];
-            DotOrDash = '_';
+            %DotOrDash = '_';
             i = i + 350;
             disp('space');
         end
@@ -109,8 +109,8 @@ while i <= N
     dash = false;
     dot = false;
     
-    Dotstring = strcat(Dotstring,DotOrDash);
-    handles.dotText.String = Dotstring;
+%     Dotstring = strcat(Dotstring,DotOrDash);
+%     handles.dotText.String = Dotstring;
     i = i + 1;
     
 end
