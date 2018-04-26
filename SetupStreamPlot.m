@@ -6,7 +6,7 @@ function handles = SetupStreamPlot(handles)
 handles.figure1.UserData.sampleRate = 200;
 
 % how much data you want to be used for processing
-handles.figure1.UserData.nSecBuffer = 10;
+handles.figure1.UserData.nSecBuffer = 5;
 
 % how much data you want to be used for graphing
 handles.figure1.UserData.nSecDisplay = 5;

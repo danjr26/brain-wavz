@@ -98,7 +98,7 @@ function resetButton_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 handles.mText.String = 'New Message';
-handles.figure1.UserData.code = '_';
+handles.figure1.UserData.code = '';
 
 
 
