@@ -23,8 +23,9 @@ num = N - num;
 usable =  N;
 code = '';
 Dotstring = '';
-
-for i = num:usable
+DotOrDash='';
+i = 1
+while i <= N
     low = max(1, i - 15);
     high = min(N, i + 15);
     total1 = sum(abs(data(1,low:high)));
@@ -69,6 +70,6 @@ for i = num:usable
     
     Dotstring = strcat(Dotstring,DotOrDash);
     handles.dotText.String = Dotstring;
-    
+    i = i + 1;
     
 end
