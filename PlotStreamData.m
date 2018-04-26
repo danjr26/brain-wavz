@@ -37,9 +37,9 @@ y3 = d.smoother.Get_Data();
 handles.figure1.UserData.totalSamples = d.totalSamples + timeRead;
 
 if d.totalSamples >= 1000
-    handles.figure1.UserData.code = [d.code, InterpretDataCopy(timeRead, y3)];
-    handles.figure1.UserData.totalSamples = d.totalSamples - 1000;
-    handles.mText.String = morseTransF(d.code);
+    handles.figure1.UserData.code = [d.code, InterpretDataCopy(timeRead, y3, handles)];
+    handles.figure1.UserData.totalSamples =  handles.figure1.UserData.totalSamples - 1000;
+    handles.mText.String = morseTransF(handles.figure1.UserData.code);
     disp('cycle');
     disp(d.code);
 end
