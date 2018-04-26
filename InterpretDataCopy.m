@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 function [code, markers] = InterpretDataCopy(num, data, handles)
-=======
-function [code] = InterpretData(num, data, handles)
->>>>>>> 0a4eac830e206f5dd98d862a9f4abd17b842e798
+
 
 % Robbie Schaefer
 % Brain WAVS project
@@ -66,7 +63,6 @@ while i <= N
             
         end
         
-<<<<<<< HEAD
         dash = true;
         
     end
@@ -92,7 +88,6 @@ while i <= N
 		handles.figure1.UserData.markers.types = [handles.figure1.UserData.markers.types, 0];
         i = i + 190;
         disp('space');
-=======
         if dot == true
             code = [code, '10'];
             DotOrDash = '.';
@@ -109,7 +104,6 @@ while i <= N
             i = i + 350;
             disp('space');
         end
->>>>>>> 0a4eac830e206f5dd98d862a9f4abd17b842e798
     end
     space = false;
     dash = false;
